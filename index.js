@@ -1,18 +1,21 @@
 'use strict'
 
+
+// let washedFilms = prompt('Какой фильм Вам понравился?');
+// let washedRating = prompt('На сколько оцените его?');
+
 let namberOfFilms;
 
 function start() {
    namberOfFilms = prompt('Сколько фильмов вы посмотрели');
-   while (namberOfFilms == '' || namberOfFilms == null || isNaN(namberOfFilms)) {
+   while (namberOfFilms == "" || namberOfFilms == null || isNaN(namberOfFilms)) {
       namberOfFilms = prompt('Сколько фильмов вы посмотрели');
-   }
+   };
 }
 
-// start();
+start();
 
-
-const personalMovieDB = {
+let personalMovieDB = {
    count: namberOfFilms,
    movies: {},
    actors: {},
@@ -21,26 +24,29 @@ const personalMovieDB = {
 
 };
 
+
 function rememberMyFilms() {
    for (let i = 0; i < 2; i++) {
       const a = prompt('Какой фильм Вам понравился?'),
          b = prompt('На сколько оцените его?');
 
-
-      if (a != null && b != null && a != "" && b != "" && a.length < 50) {
-         console.log('Good');
+      if (a != null && b != null && a != '' && b != '' && a.length < 50) {
          personalMovieDB.movies[a] = b;
+         console.log('Done')
       }
       else {
-         console.log('Erorr');
+         console.log('Erorr')
          i--;
       }
-
    }
 }
 
-// rememberMyFilms();
+rememberMyFilms();
 
+let hamburger;
+const fries = NaN;
+const cola = 0;
+const nuggets = 2;
 
 function detectPersonalLevel() {
    if (personalMovieDB.count < 10) {
@@ -56,10 +62,9 @@ function detectPersonalLevel() {
    else {
       console.log("Произошла ошибка");
    }
-}
+};
 
-// detectPersonalLevel();
-
+detectPersonalLevel();
 
 
 function writeYourGenres() {
